@@ -40,13 +40,13 @@ export const styles = StyleSheet.create({
   },
 
   cardLight: {
-    backgroundColor: '#B0E0E6',
-    shadowColor: "#000",
+    backgroundColor: '#ACCAF2',
+    shadowColor: "#021140",
   },
 
   cardDark: {
     backgroundColor: "#6204BF",
-    shadowColor: "#7C05F2",
+    shadowColor: "#CEA2F5",
   },
 
   blankCard: {
@@ -100,7 +100,7 @@ export const styles = StyleSheet.create({
 
   topbarDark: {
     backgroundColor: "#222",
-    shadowColor: "#fff",
+    shadowColor: "#CEA2F5",
   },
 
   topbarheader: {
