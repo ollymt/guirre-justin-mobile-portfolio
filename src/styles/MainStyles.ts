@@ -83,7 +83,7 @@ export const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "flex-end",
     alignItems: "center",
-    paddingBottom: 10,
+    alignSelf: "stretch",
 
     // ios shadow
     shadowOffset: { width: 0, height: 4 },
@@ -106,7 +106,7 @@ export const styles = StyleSheet.create({
   topbarheader: {
     color: "white",
     fontWeight: "bold",
-    padding: 60,
+    padding: 10,
     fontSize: 18,
   },
 
@@ -137,14 +137,14 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
   },
 
-  infoCont: {
+  section: {
     width: "100%",
     alignItems: "flex-start",
     justifyContent: "flex-start",
     marginBottom: 40,
   },
 
-  infoContHeader: {
+  sectionHeader: {
     fontSize: 20,
     fontWeight: 700,
   },
@@ -178,5 +178,9 @@ export const styles = StyleSheet.create({
 
   textDark: {
     color: "#fff",
+  },
+
+  italic: {
+    fontStyle: "italic",
   }
 });

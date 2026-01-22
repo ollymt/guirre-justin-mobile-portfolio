@@ -2,6 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, FlatList, ScrollView, Image, Pressable, Linking, ImageBackground } from 'react-native';
 import { styles } from './src/styles/MainStyles';
 import { useState } from 'react';
+import TopBar from './src/components/TopBar';
+import Card from './src/components/Card';
+import Section from './src/components/Section';
+import ImgCard from './src/components/ImgCard';
 
 const works = [
   { id: "1", imgLink: "https://drive.google.com/uc?export=view&id=1Gbs_kBP2FJFZ7K4O6Lah2BAM1DbrrZgh", name: "Curbside"},
@@ -18,8 +22,8 @@ export default function App() {
                 contentContainerStyle={styles.scrollContent}
                 stickyHeaderIndices={[0]}
     >
-      <View style={[styles.topbar, (darkMode ? (styles.topbarDark) : (styles.topbarLight))]}>
-        <Text style={[styles.topbarheader, (darkMode ? (styles.topbarheaderDark) : (styles.topbarheaderLight))]}>My Portfolio</Text>
+      <View style={{width: "100%"}}>
+        <TopBar darkMode={darkMode} />
       </View>
       <View style={styles.innerContent}>
 
@@ -30,86 +34,60 @@ export default function App() {
           <Text style={[styles.myName, styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Justin Guirre</Text>
         </View>
 
-        <View style={styles.infoCont}>
-          <Text style={[styles.infoContHeader, (darkMode ? (styles.textDark) : (styles.textLight))]}>Bio</Text>
+        <Section darkMode={darkMode} sectionLabel='Bio' children={
+          <Card text='"Where your nightmares end..."' darkMode={darkMode} italic={true}/>
+        } />
 
-          <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>"Where your nightmares end..."</Text>
-          </View>
+        <Section darkMode={darkMode} sectionLabel='Skills' children={
+          <>
+            <Card text='Good at critical thinking' darkMode={darkMode} />
+            <Card text='Good at problem solving' darkMode={darkMode} />
+            <Card text='Good at self-learning' darkMode={darkMode} />
+            <Card text='Has good attention to detail' darkMode={darkMode} />
+            <Card text='Good at curating spotify playlists' darkMode={darkMode} />
+            <Card text='Knows basic programming (html, css, js, python)' darkMode={darkMode} />
+            <Card text='Always curious' darkMode={darkMode} />
+          </>
+        } />
 
-        </View>
+        <Section darkMode={darkMode} sectionLabel='Contact Info' children={
+          <>
+            <Card text='Email: justin_chase_guirre@dlsl.edu.ph' onPress={() => Linking.openURL("mailto:justin_chase_guirre@dlsl.edu.ph")} darkMode={darkMode}/>
 
-        <View style={styles.infoCont}>
-          <Text style={[styles.infoContHeader, (darkMode ? (styles.textDark) : (styles.textLight))]}>Skills</Text>
+            <Card text='Github: ollymt' onPress={() => Linking.openURL("https://github.com/ollymt")} darkMode={darkMode} />
 
-          <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Good at critical thinking</Text>
-          </View>
-          <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Good at problem solving</Text>
-          </View>
-          <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Good at self-learning</Text>
-          </View>
-          <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Has good attention to detail</Text>
-          </View>
-          <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Good at curating spotify playlists</Text>
-          </View>
-          <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Knows basic programming (html, css, js, python)</Text>
-          </View>
-          <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Always curious</Text>
-          </View>
-        </View>
+            <Pressable style={[styles.card, styles.ig]} onPress={() => Linking.openURL("https://www.instagram.com/ollymt67")}>
+              <ImageBackground source={{
+                uri: "https://i.ytimg.com/vi/8j9szxn-68c/maxresdefault.jpg",
+              }} style={styles.igBg} imageStyle={{ borderRadius: 6, }} resizeMode='cover'>
 
-        <View style={styles.infoCont}>
-          <Text style={[styles.infoContHeader, (darkMode ? (styles.textDark) : (styles.textLight))]}>Contact Info</Text>
-
-          <Pressable style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]} onPress={() => Linking.openURL("mailto:justin_chase_guirre@dlsl.edu.ph")}>
-            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Email: justin_chase_guirre@dlsl.edu.ph</Text>
+                <Text style={[styles.igLabel]}>Instagram: @ollymt67</Text>
+              </ImageBackground>
           </Pressable>
-          <Pressable style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]} onPress={() => Linking.openURL("https://github.com/ollymt")}>
-            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Github: ollymt</Text>
-          </Pressable>
-          <Pressable style={[styles.card, styles.ig]} onPress={() => Linking.openURL("https://www.instagram.com/ollymt67")}>
-            <ImageBackground source={{
-              uri: "https://i.ytimg.com/vi/8j9szxn-68c/maxresdefault.jpg",
-            }} style={styles.igBg} imageStyle={{ borderRadius: 6, }} resizeMode='cover'>
-              <Text style={[styles.igLabel]}>Instagram: @ollymt67</Text>
-            </ImageBackground>
-          </Pressable>
-        </View>
 
-        <View style={styles.infoCont}>
-          <Text style={[styles.infoContHeader, (darkMode ? (styles.textDark) : (styles.textLight))]}>Works</Text>
+          </>
+        } />
 
+        <Section darkMode={darkMode} sectionLabel='Works' children={
           <FlatList
             data={works}
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => (
-              <View style={[ styles.card, styles.blankCard, (darkMode ? (styles.blankCardDark) : (styles.blankCardLight)) ]}>
-                <Image source={{
-                  uri: item.imgLink,
-                }} style={styles.workImg}/>
-              </View>
+
+              <ImgCard darkMode={darkMode} item={item} />
+
             )}
             style={{
               overflow: "visible",
             }}
           />
-        </View>
+        } />
 
-        <View style={styles.infoCont}>
-          <Text style={[styles.infoContHeader, (darkMode ? (styles.textDark) : (styles.textLight))]}>Settings</Text>
-
-          <Pressable style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]} onPress={() => setDarkMode(!darkMode)}>
-            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Toggle Theme</Text>
-          </Pressable>
-        </View>
-
+        <Section darkMode={darkMode} sectionLabel='Settings' children={
+          <>
+            <Card text='Toggle Theme' onPress={() => setDarkMode(!darkMode)} darkMode={!darkMode}/>
+         </>
+        } />
       </View>
       <StatusBar style="auto" />
     </ScrollView>
