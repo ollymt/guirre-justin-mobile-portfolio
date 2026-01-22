@@ -35,14 +35,18 @@ export const styles = StyleSheet.create({
     shadowRadius: 4,
   },
 
+  cardText: {
+    fontWeight: "500",
+  },
+
   cardLight: {
     backgroundColor: '#B0E0E6',
     shadowColor: "#000",
   },
 
   cardDark: {
-    backgroundColor: "#16373C",
-    shadowColor: "#fff",
+    backgroundColor: "#6204BF",
+    shadowColor: "#7C05F2",
   },
 
   blankCard: {

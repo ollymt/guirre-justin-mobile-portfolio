@@ -27,14 +27,14 @@ export default function App() {
           <Image source={{
             uri: (darkMode ? ("https://drive.google.com/uc?export=view&id=13O4DjtZB6HCiB5dzawZa5UklHrQWeONT") : ("https://drive.google.com/uc?export=view&id=1inHu4Sat6HM9793yZFQdU3ixcHU6coOX")),
           }} style={styles.pfp}/>
-          <Text style={[styles.myName, (darkMode ? (styles.textDark) : (styles.textLight))]}>Justin Guirre</Text>
+          <Text style={[styles.myName, styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Justin Guirre</Text>
         </View>
 
         <View style={styles.infoCont}>
           <Text style={[styles.infoContHeader, (darkMode ? (styles.textDark) : (styles.textLight))]}>Bio</Text>
 
           <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={(darkMode ? (styles.textDark) : (styles.textLight))}>"Where your nightmares end..."</Text>
+            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>"Where your nightmares end..."</Text>
           </View>
 
         </View>
@@ -43,25 +43,25 @@ export default function App() {
           <Text style={[styles.infoContHeader, (darkMode ? (styles.textDark) : (styles.textLight))]}>Skills</Text>
 
           <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={(darkMode ? (styles.textDark) : (styles.textLight))}>Good at critical thinking</Text>
+            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Good at critical thinking</Text>
           </View>
           <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={(darkMode ? (styles.textDark) : (styles.textLight))}>Good at problem solving</Text>
+            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Good at problem solving</Text>
           </View>
           <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={(darkMode ? (styles.textDark) : (styles.textLight))}>Good at self-learning</Text>
+            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Good at self-learning</Text>
           </View>
           <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={(darkMode ? (styles.textDark) : (styles.textLight))}>Has good attention to detail</Text>
+            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Has good attention to detail</Text>
           </View>
           <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={(darkMode ? (styles.textDark) : (styles.textLight))}>Good at curating spotify playlists</Text>
+            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Good at curating spotify playlists</Text>
           </View>
           <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={(darkMode ? (styles.textDark) : (styles.textLight))}>Knows basic programming (html, css, js, python)</Text>
+            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Knows basic programming (html, css, js, python)</Text>
           </View>
           <View style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]}>
-            <Text style={(darkMode ? (styles.textDark) : (styles.textLight))}>Always curious</Text>
+            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Always curious</Text>
           </View>
         </View>
 
@@ -69,16 +69,16 @@ export default function App() {
           <Text style={[styles.infoContHeader, (darkMode ? (styles.textDark) : (styles.textLight))]}>Contact Info</Text>
 
           <Pressable style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]} onPress={() => Linking.openURL("mailto:justin_chase_guirre@dlsl.edu.ph")}>
-            <Text style={(darkMode ? (styles.textDark) : (styles.textLight))}>Email: justin_chase_guirre@dlsl.edu.ph</Text>
+            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Email: justin_chase_guirre@dlsl.edu.ph</Text>
           </Pressable>
           <Pressable style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]} onPress={() => Linking.openURL("https://github.com/ollymt")}>
-            <Text style={(darkMode ? (styles.textDark) : (styles.textLight))}>Github: ollymt</Text>
+            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Github: ollymt</Text>
           </Pressable>
           <Pressable style={[styles.card, styles.ig]} onPress={() => Linking.openURL("https://www.instagram.com/ollymt67")}>
             <ImageBackground source={{
               uri: "https://i.ytimg.com/vi/8j9szxn-68c/maxresdefault.jpg",
             }} style={styles.igBg} imageStyle={{ borderRadius: 6, }} resizeMode='cover'>
-              <Text style={styles.igLabel}>Instagram: @ollymt67</Text>
+              <Text style={[styles.igLabel]}>Instagram: @ollymt67</Text>
             </ImageBackground>
           </Pressable>
         </View>
@@ -106,7 +106,7 @@ export default function App() {
           <Text style={[styles.infoContHeader, (darkMode ? (styles.textDark) : (styles.textLight))]}>Settings</Text>
 
           <Pressable style={[styles.card, (darkMode ? (styles.cardDark) : (styles.cardLight))]} onPress={() => setDarkMode(!darkMode)}>
-            <Text style={(darkMode ? (styles.textDark) : (styles.textLight))}>Toggle Theme</Text>
+            <Text style={[styles.cardText, (darkMode ? (styles.textDark) : (styles.textLight))]}>Toggle Theme</Text>
           </Pressable>
         </View>
 
