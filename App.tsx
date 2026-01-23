@@ -8,10 +8,10 @@ import Section from './src/components/Section';
 import ImgCard from './src/components/ImgCard';
 
 const works = [
-  { id: "1", imgLink: "https://drive.google.com/uc?export=view&id=1Gbs_kBP2FJFZ7K4O6Lah2BAM1DbrrZgh", name: "Curbside"},
-  { id: "2", imgLink: "https://drive.google.com/uc?export=view&id=18gfP5j8BSMCLU_gQ_gCF1PbPdwNTMJUZ", name: "SpeakUp"},
-  { id: "3", imgLink: "https://drive.google.com/uc?export=view&id=11ZKA6_sLvsHZctbF8WPAGVLftV8-4RMr", name: "whisk"},
-  { id: "4", imgLink: "https://drive.google.com/uc?export=view&id=17lT0Wp_IsoNjZnJUKag0O3kfZIK_WzV1", name: "24radio"},
+  { id: "1", imgLinkLight: require("./assets/work-mats/curbside.png"), imgLinkDark: require("./assets/work-mats/curbside-dark.png"), name: "Curbside"},
+  { id: "2", imgLinkLight: require("./assets/work-mats/speakup.png"), imgLinkDark: require("./assets/work-mats/speakup-dark.png"), name: "SpeakUp"},
+  { id: "3", imgLinkLight: require("./assets/work-mats/24radio.png"), imgLinkDark: require("./assets/work-mats/24radio-dark.png"), name: "24radio"},
+  { id: "4", imgLinkLight: require("./assets/work-mats/whisk.png"), imgLinkDark: require("./assets/work-mats/whisk-dark.png"), name: "whisk"},
 ]
 
 export default function App() {
@@ -72,6 +72,7 @@ export default function App() {
           <FlatList
             data={works}
             keyExtractor={(item) => item.id}
+            scrollEnabled={false}
             renderItem={({ item }) => (
 
               <ImgCard darkMode={darkMode} item={item} />
